@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <body>
+    <body ng-controller="PoupancaController as controller">
         <!-- Header -->
         <header class="w3-container w3-indigo w3-center w3-padding-64">
           <h1 class="w3-margin w3-jumbo">Poupança</h1>
@@ -22,11 +22,11 @@
         </header>
 
         <!-- First Grid -->
-        <div ng-controller="DetalhesController as detalhes" class="w3-row-padding w3-padding-64 w3-container">
+        <div class="w3-row-padding w3-padding-64 w3-container">
           <div class="w3-content">
             <div class="w3-twothird">
               <h1 class="inline">Detalhes</h1>
-              <button class="w3-btn w3-xlarge w3-green w3-right" ng-click="detalhes.salvar(conta)">Salvar</button>
+              <button class="w3-btn w3-xlarge w3-green w3-right" ng-click="controller.salvar(conta)">Salvar</button>
 
               <form class="w3-container">
                 <input class="w3-input w3-margin" type="text" placeholder="Nome" ng-model="conta.nome">
@@ -101,6 +101,9 @@
           <p class="inline w3-margin-right">Felipe Machert</p>
           <p class="inline w3-margin-left">Lucas Carlos</p>
         </footer>
+
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>      
 
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>

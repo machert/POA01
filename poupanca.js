@@ -13,9 +13,9 @@ class Poupanca {
 
     // methods
     // atualiza o saldo da poupança de acordo com o juros mensal
-    atualizaSaldo () {
+    atualizaSaldo1 () {
 
-        console.log('Saldo Anterior: ' + this._saldo)
+        console.log('Saldo Anterior: ' + this._saldo);
 
         this._saldo += this._saldo * this._juros
 
@@ -26,7 +26,7 @@ class Poupanca {
     }
 
     // recebe uma taxa de juros e atualiza o saldo da poupança
-    atualizaSaldo (juros) {
+    atualizaSaldo2 (juros) {
 
         console.log('Saldo Anterior: ' + this._saldo)
 
@@ -39,7 +39,7 @@ class Poupanca {
     }
 
     // recebe o número da poupança e uma taxa de juros e atualiza o saldo da poupança
-    atualizaSaldo (numero, juros) {
+    atualizaSaldo3 (numero, juros) {
 
         console.log('Saldo Anterior: ' + this._saldo)
 
@@ -75,7 +75,7 @@ class Poupanca {
 
             case 3:
                 console.log('Saldo Anterior: ' + this._saldo)
-                this._saldo += this._saldo * juros
+                this._saldo += this._saldo * valor
                 console.log('Juros Aplicado: ' + valor)
                 console.log('Saldo Atualizado: ' + this._saldo + '\n\n')
             break              
