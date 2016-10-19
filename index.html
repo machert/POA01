@@ -64,16 +64,16 @@
                   <th>Juros</th>
                   <th>Taxa</th>
                 </tr>
-                <tr>
-                  <td>Pedro</td>
-                  <td>Banestes</td>
-                  <td>10</td>
-                  <td>2000</td>
-                  <td>500</td>
-                  <td>1%</td>
-                  <td>1</td>
+                <tr ng-repeat="conta in contas">
+                  <td>{{conta.nome}}</td>
+                  <td>{{conta.banco}}</td>
+                  <td>{{conta.agencia}}</td>
+                  <td>{{conta.numero}}</td>
+                  <td>{{conta.saldo}}</td>
+                  <td>{{conta.juros}}</td>
+                  <td>{{conta.taxa}}</td>
                 </tr>
-                <tr>
+                <!--<tr>
                   <td>Maria</td>
                   <td>Banco do Brasil</td>
                   <td>20</td>
@@ -90,7 +90,7 @@
                   <td>1200</td>
                   <td>1%</td>
                   <td>3</td>
-                </tr>                
+                </tr>-->
               </table>
             </div>
           </div>
@@ -107,6 +107,7 @@
 
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="firebase.js"></script>
         <script src="controller.js"></script>
         <script src="poupanca.js"></script>
         <script src="aop\aop.js"></script>

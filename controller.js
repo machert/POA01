@@ -2,17 +2,37 @@ angular.module('poupanca', [])
 
 .controller('PoupancaController', function ($scope) {
 
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyAGpgGcXZRaO934fQy9AnlZ6GvYYjC9Kd8",
-        authDomain: "poajs-ffde8.firebaseapp.com",
-        databaseURL: "https://poajs-ffde8.firebaseio.com",
-        storageBucket: "poajs-ffde8.appspot.com",
-        messagingSenderId: "910970669779"
-    };
-    firebase.initializeApp(config);
-
     const controller = this;
+
+    $scope.contas = [
+        {
+            nome: 'John Rambo',
+            banco: 'Banestes',
+            agencia: 12,
+            numero: '21000-100',
+            saldo: 1000,
+            juros: 0.1,
+            taxa: 10
+        },
+                {
+            nome: 'Maria',
+            banco: 'Banco do Brasil',
+            agencia: 22,
+            numero: '22000-200',
+            saldo: 2000,
+            juros: 0.2,
+            taxa: 20
+        },
+        {
+            nome: 'Ana',
+            banco: 'Bradesco',
+            agencia: 32,
+            numero: '23000-300',
+            saldo: 3000,
+            juros: 0.3,
+            taxa: 30
+        }        
+    ]
 
     controller.salvar = function (conta) {
         
@@ -57,15 +77,7 @@ angular.module('poupanca', [])
 
         poupanca.operacao(3, 0.05)
 
-        firebase.database().ref('contas/').push({
-            nome: poupanca.nome,
-            banco: poupanca.banco,
-            agencia : poupanca.agencia,
-            numero: poupanca.numero,
-            saldo: poupanca.saldo,
-            juros : poupanca.juros,
-            taxa : poupanca.taxa
-        });
+        console.log(SalvarDAO(poupanca))
 
         // $scope.conta = {}
 
