@@ -64,7 +64,7 @@
                   <th>Juros</th>
                   <th>Taxa</th>
                 </tr>
-                <tr ng-repeat="conta in contas">
+                <tr ng-repeat="conta in contas" ng-click="controller.editar(this)">
                   <td>{{conta.nome}}</td>
                   <td>{{conta.banco}}</td>
                   <td>{{conta.agencia}}</td>
@@ -73,24 +73,6 @@
                   <td>{{conta.juros}}</td>
                   <td>{{conta.taxa}}</td>
                 </tr>
-                <!--<tr>
-                  <td>Maria</td>
-                  <td>Banco do Brasil</td>
-                  <td>20</td>
-                  <td>1500</td>
-                  <td>750</td>
-                  <td>1%</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>Ana</td>
-                  <td>Bradesco</td>
-                  <td>30</td>
-                  <td>2500</td>
-                  <td>1200</td>
-                  <td>1%</td>
-                  <td>3</td>
-                </tr>-->
               </table>
             </div>
           </div>
