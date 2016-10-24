@@ -11,7 +11,11 @@ angular.module('poupanca', [])
         listarContas()
             .then(function (result) {
 
-                const contas = Object.keys(result).map(function (key) { return result[key] })
+                const contas = Object.keys(result).map(function (key) {
+                    const conta = result[key]
+                    conta.id = key
+                    return conta
+                })
 
                 $scope.contas = contas
 
