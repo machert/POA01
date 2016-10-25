@@ -1,7 +1,8 @@
 class Poupanca {
 
     // constructor
-    constructor (nome, banco, agencia, numero, saldo, juros, taxa) {
+    constructor (id, nome, banco, agencia, numero, saldo, juros, taxa) {
+		this._id = id
         this._nome = nome
         this._banco = banco
         this._agencia = agencia
@@ -139,6 +140,14 @@ class Poupanca {
 
     set taxa (value) {
         this._taxa = value;
+    }
+	
+	get id () {
+        return this._id;
+    }
+
+    set id (value) {
+        this._id = value;
     }
 
 }

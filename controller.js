@@ -30,9 +30,27 @@ angular.module('poupanca', [])
     }
 
     controller.salvar = function (conta) {
+		let poupanca = new Poupanca(
+							conta.id,
+							conta.nome,
+							conta.banco,
+							conta.agencia,
+							conta.numero,
+							conta.saldo,
+							conta.juros,
+							conta.taxa	
+							)
+
+									
+		if(poupanca.id == undefined){			
+			criarConta(poupanca)
+		}else{
+			editarConta(poupanca)
+		}
 
         // falta salvar conta nova ou editada
-
+		
+		
         controller.listar()
 
         $scope.conta = {}
@@ -42,6 +60,7 @@ angular.module('poupanca', [])
 
         const conta = linha.conta
 
+        $scope.conta.id = conta.id
         $scope.conta.nome = conta.nome
         $scope.conta.banco = conta.banco
         $scope.conta.agencia = conta.agencia

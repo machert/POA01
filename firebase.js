@@ -8,7 +8,7 @@ const config = {
 
 firebase.initializeApp(config)
 
-function salvarConta(poupanca) {
+function criarConta(poupanca) {
     try {
         firebase.database().ref('contas/').push({
             nome: poupanca.nome,
@@ -22,7 +22,24 @@ function salvarConta(poupanca) {
     } catch (err) {
         return err.message;
     }
-    return 'Sucesso';
+    return 'Criado';
+}
+
+function editarConta(poupanca) {
+    try {
+        firebase.database().ref('contas/' + poupanca.id).set({
+            nome: poupanca.nome,
+            banco: poupanca.banco,
+            agencia: poupanca.agencia,
+            numero: poupanca.numero,
+            saldo: poupanca.saldo,
+            juros: poupanca.juros,
+            taxa: poupanca.taxa
+        })
+    } catch (err) {
+        return err.message;
+    }
+    return 'Editado';
 }
 
 function listarContas() {
