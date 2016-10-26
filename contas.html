@@ -4,22 +4,29 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>POA 01</title>
+        <title>Contas</title>
 
         <!-- Styles -->
         <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="contas.css">
     </head>
 
-    <body ng-controller="PoupancaController as controller">
+    <body ng-controller="ContasController as controller">
         <!-- Header -->
         <header class="w3-container w3-indigo w3-center w3-padding-64">
           <h1 class="w3-margin w3-jumbo">Poupança</h1>
-          <p class="w3-xlarge">POA 01</p>
+          <!--<p class="w3-xlarge">Programação Orientada a Aspectos com JavaScript</p>-->
         </header>
+
+      <!-- Navbar -->
+      <ul class="w3-navbar w3-black w3-large w3-center">
+        <li><a class="w3-white" href="#">Contas</a></li>
+        <li><a href="operacoes.html">Operações</a></li>
+        <li><a href="historico.html">Histórico</a></li>
+      </ul>        
 
         <!-- First Grid -->
         <div class="w3-row-padding w3-padding-64 w3-container">
@@ -89,18 +96,10 @@
 
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="contas.firebase.js"></script>
+        <script src="contas.js"></script>
+        <script src="classes\poupanca.js"></script>
         <script src="aop\aop.js"></script>
-		<script src="firebase.js"></script>		
-		
-		<script src="model\poupanca.js"></script>
-        <!-- <script src="model\extrato.js"></script> -->
-		
-		<script src="firebaseConta.js"></script>
-		<!-- <script src="firebaseExtrato.js"></script> -->
-		
-        <script src="controller\conta.js"></script>
-		<!-- <script src="controller\extrato.js"></script> -->
-		
-
     </body>
+
 </html>
