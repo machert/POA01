@@ -7,8 +7,8 @@ class Poupanca {
         this._banco = banco
         this._agencia = agencia
         this._numero = numero
-        this._saldo = saldo
-        this._juros = juros
+        this._saldo = parseFloat(saldo)
+        this._juros = parseFloat(juros)
         this._taxa = taxa
     }
 
@@ -115,7 +115,7 @@ class Poupanca {
     }
 
     set numero (value) {
-        this._numero = value;
+        this._numero = parseInt(value);
     }
 
     get saldo () {

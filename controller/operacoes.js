@@ -23,9 +23,7 @@ angular.module('poupanca', [])
 
             })
             .catch(function (error) {
-
                 console.log(error)
-
             })
     }
 
@@ -41,7 +39,47 @@ angular.module('poupanca', [])
         $scope.conta.saldo = conta.saldo
         $scope.conta.juros = conta.juros
         $scope.conta.taxa = conta.taxa
-    }    
+
+        document.getElementById("operacao").scrollIntoView()
+
+        document.getElementById("selectOperacao").focus()
+    }
+
+    controller.inserirOperacao = function (linha) {
+
+        if( typeof linha.operacao !== "undefined"){
+            var dataAtual = new Date()
+
+            let poupanca = new Poupanca(
+                                linha.id,
+                                linha.nome,
+                                linha.banco,
+                                linha.agencia,
+                                linha.numero,
+                                linha.saldo,
+                                linha.juros,
+                                linha.taxa)
+
+            poupanca.operacao(parseInt(linha.operacao), parseFloat(linha.valor))
+            if(poupanca.id != undefined){
+                editarConta(poupanca)
+            }
+
+            let extrato = new Extrato(poupanca.id, retornaData(dataAtual), dataAtual.getHours(), linha.operacao, linha.valor)
+
+            criarExtrato(extrato)
+
+            console.log(extrato)
+                    
+            controller.listar()
+
+            $scope.conta = {}
+
+        }else{
+            console.log("Por favor preencha os campos necessários")
+        }
+
+    }
 
     controller.listar()
 

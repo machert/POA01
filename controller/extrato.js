@@ -40,6 +40,10 @@ angular.module('poupanca', [])
                 console.log(error)
             })
     }
+
+    controller.buscarExtrato = function(){
+        console.log("oi")
+    }
 	
 	
 

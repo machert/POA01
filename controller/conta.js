@@ -1,6 +1,6 @@
 angular.module('poupanca', [])
 
-.controller('PoupancaController', function ($scope) {
+.controller('ContasController', function ($scope) {
 
     const controller = this
 
@@ -40,7 +40,7 @@ angular.module('poupanca', [])
 							)
 
 									
-		if(poupanca.id == undefined){			
+		if(poupanca.id == undefined){
 			criarConta(poupanca)
 		}else{
 			editarConta(poupanca)
@@ -64,8 +64,9 @@ angular.module('poupanca', [])
         $scope.conta.juros = conta.juros
         $scope.conta.taxa = conta.taxa
     }
+
 	
 	controller.listar()
 	
 
-});
+})
